@@ -1,0 +1,59 @@
+body {
+    background: lightsteelblue;
+}
+
+aside {
+    float: left;
+    background: lightblue;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: white;
+    border-right: 5px solid #378db6;
+}
+
+aside .logo_img {
+    width: 70px;
+    float: left;
+}
+
+aside .logo {
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+aside h3 {
+    margin-top: 55px;
+    font-size: 25px;
+}
+
+aside ul {list-style: none}
+
+aside ul li {
+    color: white;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: green;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: white;
+    margin-top: 10%;
+    margin-left: 2%;
+    text-align: center;
+    width: 75%;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 15px auto;
+}
