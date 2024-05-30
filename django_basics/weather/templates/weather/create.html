@@ -1,0 +1,34 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    Add Weather Note By Hand
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Add Weather Note By Hand</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.country }}<br>
+            {{ form.city }}<br>
+            {{ form.weather }}<br>
+            {{ form.description }}<br>
+            {{ form.temperature }}<br>
+            {{ form.feels_like }}<br>
+            {{ form.wind_speed }}<br>
+            {{ form.created_at }}
+
+            <span>{{ error }}</span>
+
+<!--            <input class="form-control" type="text" placeholder="Country"><br>-->
+<!--            <input class="form-control" type="text" placeholder="City"><br>-->
+<!--            <input class="form-control" type="text" placeholder="Weather"><br>-->
+<!--            <input class="form-control" type="text" placeholder="Description"><br>-->
+<!--            <input class="form-control" type="number" placeholder="24"><br>-->
+<!--            <input class="form-control" type="number" placeholder="26"><br>-->
+<!--            <input class="form-control" type="number" placeholder="4.5"><br>-->
+            <button class="btn btn-success" type="submit">Add Data</button>
+        </form>
+    </div>
+{% endblock %}

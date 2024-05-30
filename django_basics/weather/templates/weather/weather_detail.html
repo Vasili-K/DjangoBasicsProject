@@ -1,0 +1,19 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    {{ weather_note.country }}-{{ weather_note.city }}
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ weather_note.country }}, {{ weather_note.city }}</h1>
+        <p>{{ weather_note.created_at }}</p>
+        <p>Weather: {{ weather_note.weather }}</p>
+        <p>Description: {{ weather_note.description }}</p>
+        <p>Temperature: {{ weather_note.temperature }}</p>
+        <p>Feels like: {{ weather_note.feels_like }}</p>
+        <p>Wind speed: {{ weather_note.wind_speed }}</p>
+        <a href="{% url 'weather-update' weather_note.id %}" class="btn btn-warning">Adjust Note</a>
+        <a href="{% url 'weather-delete' weather_note.id %}" class="btn btn-danger">Delete Note</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    Delete Weather Note By Hand
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Delete Weather Note By Hand</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Delete Data</button>
+        </form>
+    </div>
+{% endblock %}

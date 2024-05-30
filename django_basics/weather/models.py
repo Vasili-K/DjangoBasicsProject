@@ -11,6 +11,9 @@ class WeatherData(models.Model):
     wind_speed = models.FloatField('Wind speed')
     created_at = models.DateTimeField('Date of request', auto_now_add=True)
 
+    def get_absolute_url(self):
+        return f'/weather/{self.pk}'
+
     def __str__(self):
         return f'{self.city}: {self.weather}, {self.temperature} '
 

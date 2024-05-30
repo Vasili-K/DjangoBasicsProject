@@ -1,13 +1,22 @@
 {% extends "main/layout.html" %}
 
-{% block titlr %}
+{% block title %}
     Latest Weather Requests
 {% endblock %}
 
 {% block content %}
     <div class="features">
         <h1>Latest Weather Requests</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque dolorum fugiat labore nihil odio provident, quae quos repellat ullam.</p>
-        <button class="btn btn-warning">Go to About Us</button>
+        {% if weather_data %}
+            {% for el in weather_data %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.country }}, {{ el.city }}:</h3>
+                    <p>Temperature: {{ el.temperature }}, Wind: {{ el.wind_speed }}, Date {{ el.created_at }}</p>
+                    <a href="{% url 'weather-detail' el.id %}" class="btn btn-success">Details</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No requests have been made yet</p>
+        {% endif %}
     </div>
 {% endblock %}
